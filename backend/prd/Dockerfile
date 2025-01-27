@@ -35,7 +35,4 @@ RUN chmod +x /usr/local/bin/entrypoint.sh
 ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
 
 # CMD で サーバーを起動
-# pumaで動作させる場合
-# CMD ["bundle", "exec", "puma", "-C", "/app/config/puma.rb"]
-# unicornで動作させる場合
 CMD ["bundle", "exec", "unicorn", "-p", "3000", "-c", "/app/config/unicorn.rb", "-E", "production"]
